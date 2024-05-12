@@ -13,7 +13,7 @@ script = ExtResource("1_x0r1p")
 position = Vector2(-1186, -513)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-681, -428)
+position = Vector2(-4, -44)
 limit_left = -3000
 limit_top = -2000
 limit_right = 3000
@@ -25,4 +25,4 @@ position_smoothing_speed = 10.0
 [node name="Cards" type="Node" parent="."]
 
 [node name="Card" parent="Cards" instance=ExtResource("2_rjrgh")]
-position = Vector2(-1533, -505)
+position = Vector2(-481, -23)
