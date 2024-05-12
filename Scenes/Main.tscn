@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkufbfi4pgf17"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_x0r1p"]
+[ext_resource type="PackedScene" uid="uid://bkv0derg0i7ua" path="res://Scenes/Card.tscn" id="2_rjrgh"]
+[ext_resource type="PackedScene" uid="uid://dndguvvlhi0ju" path="res://Scenes/Board.tscn" id="2_x3gvr"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_x0r1p")
+
+[node name="Board" parent="." instance=ExtResource("2_x3gvr")]
+
+[node name="CardPosition" type="Marker2D" parent="."]
+position = Vector2(-1186, -513)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-681, -428)
+limit_left = -3000
+limit_top = -2000
+limit_right = 3000
+limit_bottom = 2000
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="Cards" type="Node" parent="."]
+
+[node name="Card" parent="Cards" instance=ExtResource("2_rjrgh")]
+position = Vector2(-1533, -505)
