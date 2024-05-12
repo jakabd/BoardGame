@@ -35,15 +35,19 @@ func StartDrag() -> void:
 	_isDragging = true
 	_lastMousePos = get_viewport().get_mouse_position()
 	_lastPos = self.get_position()
+	var borderWidth = $Texture.material.get_shader_parameter("width")
+	$Texture.material.set_shader_parameter("width", borderWidth*2)
 	scale = Vector2(_pickUpSize, _pickUpSize)
 	
 func StopDrag() -> void:
 	_isDragging = false
+	var borderWidth = $Texture.material.get_shader_parameter("width")
+	$Texture.material.set_shader_parameter("width", borderWidth/2)
 	scale = Vector2(1.0, 1.0)
 	
 func _on_mouse_entered():
-	pass # Replace with function body.
+	$Texture.material.set_shader_parameter("color", Vector4(1.0, 0.96, 0.7,1.0))
 
 
 func _on_mouse_exited():
-	pass # Replace with function body.
+	$Texture.material.set_shader_parameter("color", Vector4(0.0, 0.0, 0.0, 0.5))
