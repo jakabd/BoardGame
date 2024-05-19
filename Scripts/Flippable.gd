@@ -1,4 +1,4 @@
-extends "res://Scripts/Pickable.gd"
+class_name Flippable extends "res://Scripts/Pickable.gd"
 
 var _frontTexture : CompressedTexture2D = load("res://Images/Card.jpg")
 var _backTexture : CompressedTexture2D = load("res://Images/CardBack.jpg")

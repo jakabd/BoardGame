@@ -7,7 +7,7 @@ extends Node
 var _cameraSpeed : float = 0.01
 
 #Mouse movement
-var _lastMousePos : Vector2
+var _pickedMousePos : Vector2
 var _lastCameraPos : Vector2
 var _isCameraDragging : bool = false
 
@@ -37,7 +37,7 @@ func _unhandled_input(event):
 			# Start dragging
 			if not _isCameraDragging and event.pressed:
 				_isCameraDragging = true
-				_lastMousePos = get_viewport().get_mouse_position()
+				_pickedMousePos = get_viewport().get_mouse_position()
 				_lastCameraPos = _mainCamera.get_position()
 			# Stop dragging if the button is released.
 			if _isCameraDragging and not event.pressed:
@@ -55,9 +55,5 @@ func MoveCameraHover(mousePos : Vector2) -> void:
 func MoveCameraDrag(mousePos : Vector2) -> void:
 	if _isCameraDragging:
 		var currentZoom = Global.GetZoom()
-		var mouseMovement = Vector2(_lastMousePos.x - mousePos.x, _lastMousePos.y - mousePos.y)/currentZoom
+		var mouseMovement = Vector2(_pickedMousePos.x - mousePos.x, _pickedMousePos.y - mousePos.y)/currentZoom
 		_mainCamera.set_position(Vector2(_lastCameraPos.x + mouseMovement.x, _lastCameraPos.y + mouseMovement.y))
-
-
-func _on_card_mouse_entered():
-	pass # Replace with function body.

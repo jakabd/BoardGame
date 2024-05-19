@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://c14tykqy5y4kv"]
+
+[ext_resource type="Script" path="res://Scripts/Dice.gd" id="1_dw1vo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a82eb"]
+size = Vector2(70, 61)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s8qy6"]
+font_size = 40
+
+[node name="Dice" type="Area2D"]
+z_index = 1
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_dw1vo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_a82eb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -35.0
+offset_top = -30.0
+offset_right = 35.0
+offset_bottom = 31.0
+text = "6"
+label_settings = SubResource("LabelSettings_s8qy6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

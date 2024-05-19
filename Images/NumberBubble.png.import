@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bof6462b1ntlx"
-path="res://.godot/imported/Player1.jpg-e6709cfe0b887c543d70bc2c0392c5f2.ctex"
+uid="uid://ducriegcrb4jm"
+path="res://.godot/imported/NumberBubble.png-771041af3f723f8e606b7bb753f52043.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Player1.jpg"
-dest_files=["res://.godot/imported/Player1.jpg-e6709cfe0b887c543d70bc2c0392c5f2.ctex"]
+source_file="res://Images/NumberBubble.png"
+dest_files=["res://.godot/imported/NumberBubble.png-771041af3f723f8e606b7bb753f52043.ctex"]
 
 [params]
 
