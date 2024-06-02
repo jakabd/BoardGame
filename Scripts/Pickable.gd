@@ -58,8 +58,8 @@ func StartDrag() -> void:
 	_orig_z_index = z_index
 	z_index = _selected_z_index
 	
-	var borderWidth = $Texture.material.get_shader_parameter("width")
-	$Texture.material.set_shader_parameter("width", borderWidth*5)
+	var borderWidth = _texture.material.get_shader_parameter("width")
+	_texture.material.set_shader_parameter("width", borderWidth*2)
 	
 	if _tween:
 		_tween.kill()
@@ -75,8 +75,8 @@ func StopDrag() -> void:
 	_velocity = Vector2(0,0)
 	
 	
-	var borderWidth = $Texture.material.get_shader_parameter("width")
-	$Texture.material.set_shader_parameter("width", borderWidth/5)
+	var borderWidth = _texture.material.get_shader_parameter("width")
+	_texture.material.set_shader_parameter("width", borderWidth/2)
 	
 	if _tween:
 		_tween.kill()

@@ -1,28 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://c14tykqy5y4kv"]
+[gd_scene load_steps=6 format=3 uid="uid://c14tykqy5y4kv"]
 
 [ext_resource type="Script" path="res://Scripts/Dice.gd" id="1_dw1vo"]
+[ext_resource type="Shader" path="res://Shaders/HighlightShader.gdshader" id="2_q675f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_atlq4"]
+shader = ExtResource("2_q675f")
+shader_parameter/color = Color(0, 0, 0, 0.5)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = false
+shader_parameter/isHighlighted = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a82eb"]
-size = Vector2(70, 61)
+size = Vector2(100, 99)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s8qy6"]
-font_size = 40
+font_size = 50
+font_color = Color(0, 0, 0, 1)
 
-[node name="Dice" type="Area2D"]
+[node name="Dice" type="Area2D" node_paths=PackedStringArray("_texture")]
 z_index = 1
+material = SubResource("ShaderMaterial_atlq4")
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_dw1vo")
+_texture = NodePath(".")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_a82eb")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -35.0
-offset_top = -30.0
-offset_right = 35.0
-offset_bottom = 31.0
+[node name="NumberLabel" type="Label" parent="."]
+offset_left = -40.0
+offset_top = -39.0
+offset_right = 40.0
+offset_bottom = 40.0
 text = "6"
 label_settings = SubResource("LabelSettings_s8qy6")
 horizontal_alignment = 1
